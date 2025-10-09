@@ -28,10 +28,7 @@ const UsoBase = () => {
   return (
     <>
       <h2>{titolo}</h2>
-      <button
-        type="button"
-        onClick={cambiaTitolo}
-      >
+      <button type="button" onClick={cambiaTitolo}>
         Change Me
       </button>
     </>

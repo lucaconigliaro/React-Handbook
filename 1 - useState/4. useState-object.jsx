@@ -20,8 +20,8 @@ const StateObject = () => {
   // Funzione per aggiornarne solo alcune proprietà (senza perdere le altre!)
   const cambiaSaluto = () => {
     setPerson({
-      ...person,    // copia tutte le proprietà da person
-      age: 25,      // sovrascrive solo age
+      ...person, // copia tutte le proprietà da person
+      age: 25, // sovrascrive solo age
       // Puoi aggiungere property: nuovoValore per aggiornare altre proprietà
     });
   };
@@ -34,9 +34,7 @@ const StateObject = () => {
         <h5>{person.age}</h5>
         <h6>{person.saluto}</h6>
       </div>
-      <button onClick={cambiaSaluto}>
-        Cambia il Saluto
-      </button>
+      <button onClick={cambiaSaluto}>Cambia il Saluto</button>
     </div>
   );
 };

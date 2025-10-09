@@ -28,10 +28,7 @@ const ArrayState = () => {
         return (
           <div key={id} className="item shadow">
             <h5>{name}</h5>
-            <button
-              type="button"
-              onClick={() => removeItem(id)}
-            >
+            <button type="button" onClick={() => removeItem(id)}>
               x
             </button>
           </div>

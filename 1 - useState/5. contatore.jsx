@@ -6,7 +6,6 @@ Questo componente è un semplice contatore con le seguenti funzioni:
 - Resettare il contatore a zero.
 - Incremento ritardato (dopo 2 secondi) usando setTimeout e callback di stato.
 L'esempio mostra sia l'uso diretto della funzione setState sia l'uso della versione col callback che è più affidabile nelle situazioni asincrone.
-
 */
 
 // COMPONENTE CONTATORE
@@ -45,18 +44,10 @@ const CounterComponent = () => {
     <div>
       <h3> {contatore}</h3>
       <div>
-        <button
-          onClick={() => setContatore(contatore - 1)}
-        >
-          Diminuisci
-        </button>
-        <button onClick={aumenta}>
-          Aumenta
-        </button>
+        <button onClick={() => setContatore(contatore - 1)}>Diminuisci</button>
+        <button onClick={aumenta}>Aumenta</button>
       </div>
-      <button onClick={reset}>
-        Reset
-      </button>
+      <button onClick={reset}>Reset</button>
     </div>
   );
 };

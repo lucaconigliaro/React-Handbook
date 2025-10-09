@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 /*
 useEffect è un Hook fondamentale di React che consente di gestire effetti collaterali nei componenti funzionali,
 come modificare manualmente il DOM, effettuare chiamate API, impostare timer o integrare codice esterno.
@@ -35,9 +35,7 @@ const useEffectBasi = () => {
       <h4>
         Value: <span>{value}</span>
       </h4>
-      <button onClick={aumenta}>
-        Aumenta
-      </button>
+      <button onClick={aumenta}>Aumenta</button>
     </div>
   );
 };
