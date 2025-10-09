@@ -5,7 +5,7 @@
 
 function CardProdotto({ nome, prezzo, descrizione }) {
   return (
-    <div className="card">
+    <div>
       <h2>{nome}</h2>
       <p>Prezzo: €{prezzo}</p>
       <p>{descrizione}</p>

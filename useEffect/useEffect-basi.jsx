@@ -31,11 +31,11 @@ const useEffectBasi = () => {
   }, [value]); // l'effetto dipende da value
 
   return (
-    <div className="item shadow">
+    <div>
       <h4>
         Value: <span>{value}</span>
       </h4>
-      <button className="button" onClick={aumenta}>
+      <button onClick={aumenta}>
         Aumenta
       </button>
     </div>

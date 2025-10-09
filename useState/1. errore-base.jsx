@@ -19,7 +19,6 @@ const ErroreBase = () => {
       <h2>{titolo}</h2>
       <button
         type="button"
-        className="btn btn-info my-3"
         onClick={cambiaTitolo}
       >
         Change Me

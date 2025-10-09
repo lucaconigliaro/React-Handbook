@@ -30,7 +30,6 @@ const UsoBase = () => {
       <h2>{titolo}</h2>
       <button
         type="button"
-        className="btn btn-info shadow my-3"
         onClick={cambiaTitolo}
       >
         Change Me

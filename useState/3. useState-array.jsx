@@ -30,7 +30,6 @@ const ArrayState = () => {
             <h5>{name}</h5>
             <button
               type="button"
-              className="btn btn-danger"
               onClick={() => removeItem(id)}
             >
               x

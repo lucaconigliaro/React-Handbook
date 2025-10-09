@@ -42,20 +42,19 @@ const CounterComponent = () => {
 
   // Render componente con bottoni per decremento, incremento e reset
   return (
-    <div className="bg-white shadow rounded py-5 w-75 col-6 offset-3">
+    <div>
       <h3> {contatore}</h3>
-      <div className="d-flex justify-content-between">
+      <div>
         <button
-          className="button my-2"
           onClick={() => setContatore(contatore - 1)}
         >
           Diminuisci
         </button>
-        <button className="button my-2" onClick={aumenta}>
+        <button onClick={aumenta}>
           Aumenta
         </button>
       </div>
-      <button className="button reset-button my-2" onClick={reset}>
+      <button onClick={reset}>
         Reset
       </button>
     </div>

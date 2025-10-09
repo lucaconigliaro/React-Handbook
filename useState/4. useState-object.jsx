@@ -29,12 +29,12 @@ const StateObject = () => {
   // Renderizzo dati e bottone
   return (
     <div className="item shadow">
-      <div className="text-left">
+      <div>
         <h5>{person.name}</h5>
         <h5>{person.age}</h5>
         <h6>{person.saluto}</h6>
       </div>
-      <button className="button" onClick={cambiaSaluto}>
+      <button onClick={cambiaSaluto}>
         Cambia il Saluto
       </button>
     </div>

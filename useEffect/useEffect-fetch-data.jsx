@@ -26,11 +26,11 @@ const FetchComponent = () => {
   return (
     <>
       <h1>Fetch Component</h1>
-      <ul className="users">
+      <ul>
         {users.map((el) => {
           const { login, id, avatar_url: img, html_url } = el;
           return (
-            <li key={id} className="shadow">
+            <li key={id}>
               <img src={img} alt={login} />
               <div>
                 <h5>{login}</h5>

@@ -26,10 +26,7 @@ const CleanUp = () => {
   }, []); // []: l’effetto si lancia UNA VOLTA quando il componente viene montato
 
   return (
-    <div
-      className="container w-75 col-6 offset-3 bg-white shadow p-4 mx-auto"
-      style={{ textAlign: "center" }}
-    >
+    <div>
       <h1> {size} </h1>
     </div>
   );
