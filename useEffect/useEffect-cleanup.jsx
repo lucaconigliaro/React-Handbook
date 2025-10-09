@@ -6,7 +6,6 @@ e di eliminarle quando il componente viene smontato o quando cambia il ciclo di 
 useEffect permette di gestire questi “side effect” e include una funzione di clean up per pulire o annullare le risorse create.
 Questo esempio mostra come tracciare la larghezza della finestra del browser aggiornando lo stato ogni volta che viene effettuata una resize,
 memorizzando la dimensione attuale nello state React e assicurando la rimozione dell’event listener al momento giusto per evitare memory leaks.
-
 */
 
 const CleanUp = () => {

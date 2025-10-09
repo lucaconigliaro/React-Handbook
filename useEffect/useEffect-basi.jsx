@@ -6,7 +6,6 @@ Viene eseguito dopo ogni re-render a meno che non venga specificato diversamente
 La funzione di clean up (restituita da useEffect) viene chiamata prima di ogni nuovo effetto o quando il componente viene smontato, permettendo di liberare risorse.
 
 Questo esempio aggiorna il titolo della pagina in base al valore del contatore e logga nella console l’attivazione e la clean up function.
-
 */
 
 const useEffectBasi = () => {

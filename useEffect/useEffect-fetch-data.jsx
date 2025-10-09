@@ -9,8 +9,6 @@ si usa useEffect con array di dipendenze vuoto [], in modo che la fetch sia eseg
 La libreria axios semplifica la sintassi della chiamata e la gestione delle promesse.
 */
 
-// COMPONENTE DI FETCH DATI UTENTE DA GITHUB
-
 const FetchComponent = () => {
   const [users, setUsers] = useState([]);
 
