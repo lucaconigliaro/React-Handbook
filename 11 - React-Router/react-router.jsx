@@ -6,7 +6,7 @@ import {
   Outlet,
   useParams,
   useNavigate,
-  NavLink
+  NavLink,
 } from "react-router-dom";
 /*
 React Router è la libreria standard per la gestione del routing nelle applicazioni React a pagina singola (SPA).
@@ -49,13 +49,19 @@ function Layout() {
       <nav>
         <ul>
           <li>
-            <NavLink to="/" activeclassname="active" end>Home</NavLink>
+            <NavLink to="/" activeclassname="active" end>
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/about" activeclassname="active">About</NavLink>
+            <NavLink to="/about" activeclassname="active">
+              About
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/users" activeclassname="active">Users</NavLink>
+            <NavLink to="/users" activeclassname="active">
+              Users
+            </NavLink>
           </li>
         </ul>
       </nav>
@@ -79,13 +85,13 @@ function About() {
 function Users() {
   const users = [
     { id: 1, name: "Luca" },
-    { id: 2, name: "Maria" }
+    { id: 2, name: "Maria" },
   ];
   return (
     <div>
       <h2>Users List</h2>
       <ul>
-        {users.map(user => (
+        {users.map((user) => (
           <li key={user.id}>
             <Link to={`/users/${user.id}`}>{user.name}</Link>
           </li>
@@ -133,7 +139,6 @@ function App() {
 }
 
 export default App;
-
 
 /*
 NOTE IMPORTANTI
