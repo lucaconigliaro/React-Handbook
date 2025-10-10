@@ -1,21 +1,21 @@
 import useFetch from "./useFetch";
-
 const url = "https://jsonplaceholder.typicode.com/users";
 const postUrl = "https://jsonplaceholder.typicode.com/posts";
 
 /*
-Questo componente utilizza un custom hook chiamato useFetch che semplifica il recupero asincrono dei dati.
-useFetch mantiene internamente lo stato di caricamento (isLoading) e i dati ricevuti (data),
-ed espone questi dati al componente che lo usa.
-L'obiettivo è evitare duplicazioni di codice per fetch API e aggiornamento dello stato, favorendo riusabilità e chiarezza.
+Questo componente React mostra un uso avanzato di un custom hook chiamato `useFetch`
+che semplifica la gestione di fetch asincroni di dati da API esterne.
+useFetch incapsula la logica di fetch, stato dati, e loading in un solo hook riutilizzabile,
+facilitando la scrittura di componenti puliti e mantenibili senza duplicare codice.
 
-Il componente FetchComponents mostra una lista di utenti caricati dall’API,
-e include un componente Post che carica e mostra i post da un altro endpoint separato, dimostrando composizione e riutilizzo di useFetch.
+Il componente FetchComponents esegue due fetch separati:
+- recupera e mostra la lista utenti dall’endpoint users,
+- recupera e mostra la lista di post dall’endpoint posts tramite un componente figlio.
+Questo dimostra composizione di componenti e riuso di hook.
 */
 
-// Componente che mostra lista utenti
 const FetchComponents = () => {
-  // uso custom hook per recuperare dati utenti
+  // Recupero dati utenti e stato caricamento con custom hook
   const { data, isLoading } = useFetch(url);
 
   return (
@@ -40,9 +40,8 @@ const FetchComponents = () => {
   );
 };
 
-// Componente che mostra lista post
 const Post = () => {
-  // uso stesso custom hook per recuperare i post
+  // Recupero dati post e stato caricamento
   const { data, isLoading } = useFetch(postUrl);
 
   return (
@@ -70,9 +69,10 @@ export default FetchComponents;
 
 /*
 NOTE IMPORTANTI
-- Custom hook useFetch astrae la logica asincrona ricorrente, migliorando riusabilità.
-- Componente parent usa useFetch per utenti, child Post usa stesso hook per post, dimostrando composizione.
-- Lo stato isLoading permette di mostrare placeholder prima del caricamento effettivo.
-- Mappare l’array di dati in JSX richiede la chiave univoca key={id} per performance.
-- Questo pattern è uno standard avanzato per fetch API in React.
+- Il custom hook useFetch astrae la logica comune di fetch e gestione stato dati/loading.
+- Il componente principale FetchComponents usa useFetch per utenti e compone il componente Post usando lo stesso hook per post.
+- Lo stato isLoading permette di gestire in modo chiaro il rendering condizionale tra caricamento e dati.
+- Ogni dato mappato in JSX deve avere una chiave univoca ('key') per performance.
+- Questo pattern migliora riusabilità, leggibilità e separazione delle responsabilità in React.
+- Il custom hook può essere facilmente esteso con gestione errori o refresh automatici.
 */

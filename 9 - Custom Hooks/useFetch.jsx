@@ -2,10 +2,17 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 /*
-Questo custom hook useFetch è un modello riutilizzabile per effettuare chiamate API asincrone in React.
-Usando axios per il fetch, mantiene internamente lo stato dei dati ricevuti e uno stato di caricamento.
-L’hook espone questi stati al componente chiamante per agevolare il rendering condizionale e la visualizzazione dei dati.
-L’effetto dipende dall’url passato, per rifetch automatico se cambia.
+In React, spesso si ha la necessità di effettuare chiamate API asincrone per ottenere dati da server esterni.
+Ripetere la stessa logica di fetch in più componenti crea codice ridondante e difficile da mantenere.
+Per questo si utilizzano i Custom Hooks, funzioni che incapsulano logica riutilizzabile di stato, effetti e funzioni.
+
+Questo custom hook `useFetch` è un esempio classico che permette di:
+- Effettuare una chiamata HTTP GET all’URL specificato
+- Tenere traccia dei dati ricevuti tramite uno state dedicato
+- Gestire uno stato di caricamento isLoading per mostrare placeholder o spinner
+- Rifetch automaticamente se cambia l’URL passato come dipendenza
+
+In questo modo, la logica complessa di fetch è isolata e il componente che usa l’hook rimane semplice e pulito.
 */
 
 const useFetch = (url) => {
@@ -13,18 +20,18 @@ const useFetch = (url) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Funzione asincrona immediatamente invocata per fetch dati
+    // Funzione asincrona auto-invocata che effettua fetch dati
     (async () => {
-      setIsLoading(true); // inizio caricamento
+      setIsLoading(true);
       try {
-        const { data } = await axios.get(url); // chiamata API
-        setData(data); // aggiorno stato con dati ricevuti
+        const { data } = await axios.get(url);
+        setData(data);
       } catch (error) {
-        console.log(error); // gestione semplice di errori con console log (estendibile)
+        console.log(error);
       }
-      setIsLoading(false); // fine caricamento
+      setIsLoading(false);
     })();
-  }, [url]); // Rilancia fetch se url cambia
+  }, [url]);
 
   return { data, isLoading };
 };
@@ -33,10 +40,11 @@ export default useFetch;
 
 /*
 NOTE IMPORTANTI
-- Separare la logica fetch in custom hook migliora riusabilità e leggibilità.
-- L’effetto di fetch viene richiamato ogni volta che cambia l’url (dipendenza).
-- In casi reali si consiglia di gestire anche errori in uno stato separato e la cancellazione/ripulitura delle fetch.
-- Lo stato isLoading consente UI che mostrano loading spinner o placeholder.
-- Axios semplifica la sintassi e la gestione delle promesse rispetto a fetch nativo.
-- Questo hook può essere usato con qualsiasi endpoint API che restituisce JSON.
+- Separare la logica fetch in un custom hook migliora la leggibilità e riusabilità del codice in più componenti.
+- Il valore url è la dipendenza di useEffect: quando cambia, l’effetto si rilancia automaticamente.
+- È consigliabile estendere la gestione degli errori con uno stato dedicato, non solo console.log.
+- Lo stato isLoading è utile per mostrare indicatori visivi di caricamento all’utente durante la fetch.
+- axios semplifica la sintassi e la gestione delle promesse rispetto alla fetch nativa.
+- Questo hook funziona con qualsiasi API che restituisca dati JSON.
+- Personalizzazioni comuni includono supporto per metodi oltre GET, retry, cancellazione richieste (abort controller).
 */
