@@ -48,7 +48,7 @@ export default ReducerCounter;
 
 /*
 NOTE IMPORTANTI
-- useReducer è preferibile quando lo stato è un oggetto complesso o richiede tante azioni distinte.[web:789][web:793]
+- useReducer è preferibile quando lo stato è un oggetto complesso o richiede tante azioni distinte.
 - Il reducer centralizza tutta la logica di update rendendo il codice più leggibile e gestibile.
 - dispatch è l’unico modo per aggiornare lo stato, tramite oggetti action con proprietà type.
 - Ogni action type corrisponde a una specifica modifica dello stato dichiarata nel reducer.
