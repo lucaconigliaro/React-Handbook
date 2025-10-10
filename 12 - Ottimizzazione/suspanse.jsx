@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import { Suspense, lazy } from "react";
 
 /*
 Suspense è un componente React che aiuta a gestire casi di caricamento asincrono in modo dichiarativo.
