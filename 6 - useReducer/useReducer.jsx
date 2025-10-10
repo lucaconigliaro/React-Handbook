@@ -4,7 +4,7 @@ import { useReducer } from "react";
 useReducer è un hook React pensato per gestire state complessi o logiche di aggiornamento articolate, in alternativa a useState.
 Si utilizza quando lo stato dell’applicazione è composto da oggetti strutturati e diverse azioni devono modificarlo in modo prevedibile e centralizzato.
 Il reducer è una funzione pura che riceve lo state attuale e un oggetto action, e restituisce il nuovo stato sulla base del tipo di azione eseguita.
-Il pattern è simile a quello di Redux, ma integrato direttamente nel componente tramite la funzione dispatch.[web:789][web:793]
+Il pattern è simile a quello di Redux, ma integrato direttamente nel componente tramite la funzione dispatch.
 
 Esempio: gestione di un contatore con azioni incrementa, decrementa e reset.
 */
