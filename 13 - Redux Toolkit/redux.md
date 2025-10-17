@@ -37,6 +37,7 @@ VANTAGGI PRINCIPALI DI REDUX
 ---
 
 RIASSUNTO DEL CONCETTO
+
 Redux è come un centralino intelligente per la gestione dello stato:
 tutti i dati appaiono in un unico posto, e per cambiarli si deve passare per un processo standardizzato (azioni e reducer),
 che assicura modifiche controllate, tracciabili e facilmente gestibili.
